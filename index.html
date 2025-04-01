@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haikal Porotofolio</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay loop muted id="myVideo">
+      <source src="meme.mp4" type="video/mp4" />
+    </video>
+
+    <script>
+      // Function to unmute the video and start playing audio
+      function unmuteVideo() {
+        var video = document.getElementById("myVideo");
+        video.muted = false; // Unmute the video
+        video.play(); // Ensure it continues playing after unmuted
+        document.getElementById("unmuteBtn").style.display = "none"; // Hide the unmute button
+      }
+
+      setTimeout(function () {
+        unmuteVideo();
+      }, 100);
+    </script>
+  </body>
+</html>
