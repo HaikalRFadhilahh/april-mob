@@ -31,13 +31,11 @@
       function unmuteVideo() {
         var video = document.getElementById("myVideo");
         video.muted = false; // Unmute the video
-        video.play(); // Ensure it continues playing after unmuted
-        document.getElementById("unmuteBtn").style.display = "none"; // Hide the unmute button
       }
 
       setTimeout(function () {
         unmuteVideo();
-      }, 500);
+      }, 1000);
     </script>
   </body>
 </html>
