@@ -20,8 +20,37 @@
         object-fit: cover;
       }
     </style>
+    <script>
+      window.onload = function () {
+        var context = new AudioContext();
+      };
+    </script>
   </head>
   <body>
-    <img src="meme.gif" alt="GIF Animation" />
+    <img src="meme.gif" />
+    <audio
+      autoplay
+      muted
+      loop
+      id="audioMeme"
+      src="audio.mp3"
+      allow="autoplay"></audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let audio = document.getElementById("audioMeme");
+        audio.muted = false; // Unmute setelah halaman dimuat
+
+        let playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Audio berhasil diputar.");
+            })
+            .catch((error) => {
+              console.log("Access Autoplay Ditolak: ", error);
+            });
+        }
+      });
+    </script>
   </body>
 </html>
